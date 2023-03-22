@@ -17,6 +17,11 @@ public class SpringbootAzuresqlApplication {
     @Autowired
     private EmployeeRepository repository;
 
+    @GetMapping("/hello")
+	public String hello() {
+		return "Hello Azure Sql Database from github";
+	}
+    
     @PostMapping("/employee")
     public Employee addEmployee(@RequestBody Employee employee) {
         return repository.save(employee);
